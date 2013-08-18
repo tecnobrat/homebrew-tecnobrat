@@ -16,6 +16,7 @@ class Ice < Formula
   def patches
     [
       "https://trac.macports.org/export/94734/trunk/dports/devel/ice-cpp/files/patch-ice.cpp.config.Make.rules.Darwin.diff",
+      "https://raw.github.com/tecnobrat/homebrew-tecnobrat/master/ice-ruby.patch",
       DATA
     ]
   end
@@ -33,6 +34,12 @@ class Ice < Formula
   def install
     ENV.O2
     inreplace "cpp/config/Make.rules" do |s|
+      s.gsub! "#OPTIMIZE", "OPTIMIZE"
+      s.gsub! "/opt/Ice-$(VERSION)", prefix
+      s.gsub! "/opt/Ice-$(VERSION_MAJOR).$(VERSION_MINOR)", prefix
+    end
+
+    inreplace "rb/config/Make.rules" do |s|
       s.gsub! "#OPTIMIZE", "OPTIMIZE"
       s.gsub! "/opt/Ice-$(VERSION)", prefix
       s.gsub! "/opt/Ice-$(VERSION_MAJOR).$(VERSION_MINOR)", prefix
