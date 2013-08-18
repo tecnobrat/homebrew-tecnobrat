@@ -40,7 +40,7 @@ class Ice < Formula
     end
 
     inreplace "rb/config/Make.rules" do |s|
-      s.gsub! "#OPTIMIZE", "OPTIMIZE"
+      # s.gsub! "#OPTIMIZE", "OPTIMIZE"
       s.gsub! "/opt/Ice-$(VERSION)", prefix
       s.gsub! "/opt/Ice-$(VERSION_MAJOR).$(VERSION_MINOR)", prefix
     end
