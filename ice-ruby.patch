@@ -4,10 +4,10 @@ diff -crB --new-file p1/rb/config/Make.rules.Darwin p2/rb/config/Make.rules.Darw
 ***************
 *** 0 ****
 --- 1,18 ----
-+ mklibfilename           = $(if $(2),$(1).$(2).dylib,$(1).dylib)
-+ mksoname                = $(if $(2),$(1).$(2).dylib,$(1).dylib)
++ mklibfilename           = $(if $(2),$(1).$(2).dy,$(1).dy)
++ mksoname                = $(if $(2),$(1).$(2).dy,$(1).dy)
 + 
-+ mklibname               = $(1).dylib
++ mklibname               = $(1).dy
 + curdir                  = $(shell pwd)
 + 
 + ifeq ($(OPTIMIZE),yes)
