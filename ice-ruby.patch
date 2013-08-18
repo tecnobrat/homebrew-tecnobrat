@@ -3,7 +3,7 @@ diff -crB --new-file p1/rb/config/Make.rules.Darwin p2/rb/config/Make.rules.Darw
 --- p2/rb/config/Make.rules.Darwin	2013-08-18 13:55:30.000000000 -0700
 ***************
 *** 0 ****
---- 1,18 ----
+--- 1,11 ----
 + mklibfilename           = $(if $(2),$(1).$(2).dylib,$(1).dylib)
 + mksoname                = $(if $(2),$(1).$(2).dylib,$(1).dylib)
 + 
